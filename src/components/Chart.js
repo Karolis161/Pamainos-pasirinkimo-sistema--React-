@@ -2,8 +2,6 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 
-//npm install react-chartjs-2@3.0.4 (TIK SITAS VEIKIA)
-
 const DynamicChart = () => {
     const [chartData, setChartData] = useState({});
     const [employeeSalary, setEmployeeSalary] = useState([]);
