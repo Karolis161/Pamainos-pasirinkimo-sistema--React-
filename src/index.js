@@ -6,10 +6,10 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-    <HashRouter>
-        <App />
-    </HashRouter>,
-    document.getElementById("root")
+  <HashRouter>
+    <App />
+  </HashRouter>,
+  document.getElementById("root")
 );
 
 serviceWorker.unregister();

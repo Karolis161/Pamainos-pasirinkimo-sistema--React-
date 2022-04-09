@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8080/api/auth/";
 
-const register = (username,name,lastname, email, password) => {
+const register = (username, name, lastname, email, password) => {
   return axios.post(API_URL + "signup", {
     username,
     name,
@@ -13,15 +13,15 @@ const register = (username,name,lastname, email, password) => {
 };
 
 const getUsers = () => {
-  return (axios.get(API_URL + "users")
-  .then((response)=> {
-    console.log('users recieved')
-        return response.data  
-  })
-  .catch(()=>{
-    console.log("error retrieving users")
-  })
-  )
+  return axios
+    .get(API_URL + "users")
+    .then((response) => {
+      console.log("users recieved");
+      return response.data;
+    })
+    .catch(() => {
+      console.log("error retrieving users");
+    });
 };
 
 const login = (username, password) => {
@@ -40,46 +40,34 @@ const login = (username, password) => {
 };
 
 const getSlots = () => {
-  return axios.
-  get(API_URL + "slots")
-  .then((response) => {
-    return response.data;
-  })
-  .catch(() => {
-    console.log("error retrieving slots")
-  })
-}
-
-const createSlotAdmin = (name,lastname,date) => {
-  //alert(name);
-  return axios.
-  post(API_URL + "slot", {
-    name,
-    lastname,
-    date
-  }).then((response) => {
-        return response.data;
-  });
+  return axios
+    .get(API_URL + "slots")
+    .then((response) => {
+      return response.data;
+    })
+    .catch(() => {
+      console.log("error retrieving slots");
+    });
 };
-const saveSlot = (id,startShift,endShift) => {
-  //alert(name);
-  return axios.
-  post(API_URL + "saveslot", {
+
+const createSlotAdmin = (name, lastname, date) => {
+  return axios
+    .post(API_URL + "slot", {
+      name,
+      lastname,
+      date,
+    })
+    .then((response) => {
+      return response.data;
+    });
+};
+const saveSlot = (id, startShift, endShift) => {
+  return axios.post(API_URL + "saveslot", {
     id,
     startShift,
-    endShift
-  })
+    endShift,
+  });
 };
-
-const createSlotUser = (shiftstart,shiftend) => {
-  return axios.
-  post(API_URL + "slotuser", {
-    shiftstart,
-    shiftend
-  })
-};
-
-
 
 const logout = () => {
   localStorage.removeItem("user");
