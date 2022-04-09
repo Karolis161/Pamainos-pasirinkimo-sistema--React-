@@ -20,7 +20,7 @@ const Role = db.role;
 
 db.mongoose
   .connect(
-    `mongodb+srv://${mongoConfig.Username}:${mongoConfig.Password}@cluster0.lxxp4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+    `mongodb+srv://${mongoConfig.Username}:${mongoConfig.Password}@generator.1yzqq.mongodb.net/PamainosSistemaReact?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
